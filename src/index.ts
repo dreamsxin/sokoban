@@ -3,7 +3,7 @@ import Game from "./scenes/Game"
 
 const config = {
   width: 256,
-  height: 276,
+  height: 256,
   backgroundColor: "0 x 000000",
   scene: [Game],
   pixelArt: true,
