@@ -4,7 +4,7 @@
   "description": "8bit puzzle video game",
   "scripts": {
     "dev": "webpack-dev-server",
-    "start": "node server.ts",
+    "start": "node server.js",
     "build": "webpack -p --mode=production",
     "heroku-postbuild": "npm run build"
   },
