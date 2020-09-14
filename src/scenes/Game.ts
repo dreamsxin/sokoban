@@ -1,15 +1,11 @@
 import Phaser from "phaser"
-import { tileset } from "../assets/images"
+import { Player } from "../objects"
 
 export default class Game extends Phaser.Scene {
+  private player?: Player
+
   constructor() {
     super("game")
-  }
-  preload() {
-    this.load.spritesheet("tileset", tileset, {
-      frameWidth: 32,
-      startFrame: 0,
-    })
   }
   create() {
     const level = [
@@ -27,10 +23,12 @@ export default class Game extends Phaser.Scene {
       tileWidth: 32,
       tileHeight: 32,
     })
-
     const tileset = map.addTilesetImage("tileset")
     const layer = map.createStaticLayer(0, tileset)
 
-    this.add.sprite(175, 80, "tileset", 12)
+    this.player = new Player(this, 48, 48, "tileset", 12)
+  }
+  update() {
+    this.player.update()
   }
 }
