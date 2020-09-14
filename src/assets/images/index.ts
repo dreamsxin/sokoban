@@ -1,2 +1,2 @@
 // @ts-nocheck
-export { default as tileset } from "./sokoban_tileset.png"
+export { default as tiles } from "./tiles.png"

@@ -1,5 +1,5 @@
 import Phaser from "phaser"
-import { tileset } from "../assets/images"
+import { tiles } from "../assets/images"
 import registerAnimations from "../animations"
 
 export default class Boot extends Phaser.Scene {
@@ -7,7 +7,7 @@ export default class Boot extends Phaser.Scene {
     super("boot")
   }
   preload() {
-    this.load.spritesheet("tileset", tileset, {
+    this.load.spritesheet("tiles", tiles, {
       frameWidth: 32,
       startFrame: 0,
     })
