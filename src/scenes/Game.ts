@@ -26,7 +26,7 @@ export default class Game extends Phaser.Scene {
     const tileset = map.addTilesetImage("tileset")
     const layer = map.createStaticLayer(0, tileset)
 
-    this.player = new Player(this, 48, 48, "tileset", 12)
+    this.player = new Player(this, 48, 48)
   }
   update() {
     this.player.update()

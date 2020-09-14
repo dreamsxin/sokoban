@@ -3,14 +3,8 @@ import Phaser from "phaser"
 export default class Player extends Phaser.GameObjects.Sprite {
   private cursors?: Phaser.Types.Input.Keyboard.CursorKeys
 
-  constructor(
-    scene: Phaser.Scene,
-    x: number,
-    y: number,
-    texture: string,
-    frame: number
-  ) {
-    super(scene, x, y, texture, frame)
+  constructor(scene: Phaser.Scene, x: number, y: number) {
+    super(scene, x, y, "tileset", 12)
     scene.add.existing(this)
 
     this.cursors = scene.input.keyboard.createCursorKeys()
