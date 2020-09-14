@@ -17,7 +17,7 @@ module.exports = {
         loader: "babel-loader",
       },
       {
-        test: /\.(gif|png|jpe?g|svg|xml|ogg|mp3|json)$/i,
+        test: /\.(gif|png|jpe?g|svg|xml|ogg|mp3)$/i,
         loader: "file-loader",
       },
     ],

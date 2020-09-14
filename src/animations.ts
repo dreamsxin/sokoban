@@ -1,7 +1,7 @@
 const registerAnimations = (anims: Phaser.Animations.AnimationManager) => {
   anims.create({
     key: "walk_up",
-    frames: anims.generateFrameNumbers("tileset", {
+    frames: anims.generateFrameNumbers("tiles", {
       start: 4,
       end: 7,
     }),
@@ -10,7 +10,7 @@ const registerAnimations = (anims: Phaser.Animations.AnimationManager) => {
   })
   anims.create({
     key: "walk_right",
-    frames: anims.generateFrameNumbers("tileset", {
+    frames: anims.generateFrameNumbers("tiles", {
       start: 8,
       end: 11,
     }),
@@ -19,7 +19,7 @@ const registerAnimations = (anims: Phaser.Animations.AnimationManager) => {
   })
   anims.create({
     key: "walk_down",
-    frames: anims.generateFrameNumbers("tileset", {
+    frames: anims.generateFrameNumbers("tiles", {
       start: 12,
       end: 15,
     }),
@@ -28,7 +28,7 @@ const registerAnimations = (anims: Phaser.Animations.AnimationManager) => {
   })
   anims.create({
     key: "walk_left",
-    frames: anims.generateFrameNumbers("tileset", {
+    frames: anims.generateFrameNumbers("tiles", {
       start: 16,
       end: 19,
     }),

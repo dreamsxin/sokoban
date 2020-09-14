@@ -16,10 +16,17 @@ export default class Game extends Phaser.Scene {
     const tileset = map.addTilesetImage("sokoban_tileset", "tiles")
     const belowLayer = map.createStaticLayer("Below Player", tileset, 0, 0)
     const worldLayer = map.createStaticLayer("World", tileset, 0, 0)
+    worldLayer.setCollisionByProperty({ collides: true })
 
-    // this.player = new Player(this, 48, 48)
+    const spawnPoint = map.findObject(
+      "Objects",
+      (obj) => obj.name === "Spawn Point"
+    )
+    this.player = new Player(this, spawnPoint.x, spawnPoint.y)
+
+    this.physics.add.collider(this.player, worldLayer)
   }
   update() {
-    // this.player.update()
+    this.player.update()
   }
 }
