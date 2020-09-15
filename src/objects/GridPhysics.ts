@@ -28,10 +28,6 @@ export class GridPhysics {
     if (this.isMoving()) return
     if (this.isBlockingDirection(direction)) return
 
-    const belowBox = this.getBelowBox()
-    const movingBox = this.getMovingBox()
-    if (movingBox && !belowBox) return
-
     const frontBox = this.getFrontBox(direction)
     if (frontBox) {
       if (frontBox.isBlocked(direction)) return
