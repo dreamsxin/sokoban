@@ -1,11 +1,11 @@
 import { Game } from "../scenes"
-import { Direction, Player } from "./"
+import { Direction, Player, Box } from "./"
 
 const Vector2 = Phaser.Math.Vector2
 type Vector2 = Phaser.Math.Vector2
 
 export class GridPhysics {
-  private readonly speedPixelsPerSecond: number = Game.TILE_SIZE * 3
+  private readonly speedPixelsPerSecond: number = Game.TILE_SIZE * 4
   private tileSizePixelsWalked: number = 0
   private decimalPlacesLeft = 0
   private movementDirection = Direction.NONE
@@ -19,14 +19,19 @@ export class GridPhysics {
   }
 
   constructor(
-    private object: Player,
-    private tileMap: Phaser.Tilemaps.Tilemap
+    private object: Player | Box,
+    private tileMap: Phaser.Tilemaps.Tilemap,
+    private scene: Phaser.Scene
   ) {}
 
   moveObject(direction: Direction): void {
     if (this.isMoving()) return
     if (this.isBlockingDirection(direction)) {
     } else {
+      if (this.object instanceof Player) {
+        const frontBox = this.getFrontBox(direction)
+        if (frontBox) frontBox.moveObject(direction)
+      }
       this.startMoving(direction)
     }
   }
@@ -35,6 +40,17 @@ export class GridPhysics {
     if (this.isMoving()) {
       this.updatePlayerPosition(delta)
     }
+  }
+
+  private getFrontBox(direction: Direction): Box {
+    const frontTilePosition = this.tilePosInDirection(direction)
+    // @ts-ignore
+    return this.scene.boxes.find((box: Box) => {
+      const boxTilePosition = box.getTilePos()
+      return (
+        JSON.stringify(boxTilePosition) === JSON.stringify(frontTilePosition)
+      )
+    })
   }
 
   private tilePosInDirection(direction: Direction): Vector2 {

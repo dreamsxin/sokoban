@@ -1,9 +1,8 @@
 import { GridPhysics, Direction } from "./"
 import { Game } from "../scenes"
 
-export class Player {
-  private cursors: Phaser.Types.Input.Keyboard.CursorKeys
-  private playerPhysics: GridPhysics
+export class Box {
+  private boxPhysics: GridPhysics
 
   constructor(
     private scene: Phaser.Scene,
@@ -16,23 +15,16 @@ export class Player {
       startTilePosX * Game.TILE_SIZE + this.objectOffsetX(),
       startTilePosY * Game.TILE_SIZE + this.objectOffsetY()
     )
-    this.sprite.setFrame(12)
-    this.cursors = this.scene.input.keyboard.createCursorKeys()
-    this.playerPhysics = new GridPhysics(this, this.map, this.scene)
+    this.sprite.setFrame(3)
+    this.boxPhysics = new GridPhysics(this, this.map, this.scene)
   }
 
   update(_time: number, delta: number) {
-    this.playerPhysics.update(delta)
+    this.boxPhysics.update(delta)
+  }
 
-    if (this.cursors.left.isDown) {
-      this.playerPhysics.moveObject(Direction.LEFT)
-    } else if (this.cursors.right.isDown) {
-      this.playerPhysics.moveObject(Direction.RIGHT)
-    } else if (this.cursors.up.isDown) {
-      this.playerPhysics.moveObject(Direction.UP)
-    } else if (this.cursors.down.isDown) {
-      this.playerPhysics.moveObject(Direction.DOWN)
-    }
+  moveObject(direction: Direction) {
+    this.boxPhysics.moveObject(direction)
   }
 
   private objectOffsetX(): number {
