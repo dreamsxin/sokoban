@@ -5,7 +5,7 @@ const Vector2 = Phaser.Math.Vector2
 type Vector2 = Phaser.Math.Vector2
 
 export class GridPhysics {
-  private readonly speedPixelsPerSecond: number = Game.TILE_SIZE * 4
+  private readonly speedPixelsPerSecond: number = Game.TILE_SIZE * 3
   private tileSizePixelsWalked: number = 0
   private decimalPlacesLeft = 0
   private movementDirection = Direction.NONE
@@ -28,11 +28,13 @@ export class GridPhysics {
     if (this.isMoving()) return
     if (this.isBlockingDirection(direction)) return
 
+    const movingBox = this.getMovingBox()
     const frontBox = this.getFrontBox(direction)
+
     if (frontBox) {
       if (frontBox.isBlocked(direction)) return
       else frontBox.moveObject(direction)
-    }
+    } else if (movingBox) return
 
     this.startMoving(direction)
   }
@@ -52,6 +54,11 @@ export class GridPhysics {
         JSON.stringify(boxTilePosition) === JSON.stringify(frontTilePosition)
       )
     })
+  }
+
+  private getMovingBox(): Box {
+    // @ts-ignore
+    return this.scene.boxes.find((box: Box) => box.isMoving())
   }
 
   private tilePosInDirection(direction: Direction): Vector2 {
@@ -136,7 +143,7 @@ export class GridPhysics {
     }
   }
 
-  private isMoving(): boolean {
+  isMoving(): boolean {
     return this.movementDirection != Direction.NONE
   }
 

@@ -27,6 +27,10 @@ export class Box {
     this.boxPhysics.moveObject(direction)
   }
 
+  isMoving(): boolean {
+    return this.boxPhysics.isMoving()
+  }
+
   isBlocked(direction: Direction): boolean {
     return this.boxPhysics.isBlockingDirection(direction)
   }
