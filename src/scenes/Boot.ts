@@ -2,7 +2,7 @@ import Phaser from "phaser"
 import { tiles } from "../assets/images"
 import registerAnimations from "../animations"
 
-export default class Boot extends Phaser.Scene {
+export class Boot extends Phaser.Scene {
   constructor() {
     super("boot")
   }

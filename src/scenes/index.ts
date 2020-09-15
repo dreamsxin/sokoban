@@ -1,2 +1,2 @@
-export { default as Boot } from "./Boot"
-export { default as Game } from "./Game"
+export * from "./Boot"
+export * from "./Game"

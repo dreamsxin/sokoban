@@ -1,37 +1,42 @@
 import Phaser from "phaser"
+import { Game } from "../scenes"
 
-export default class Player extends Phaser.Physics.Arcade.Sprite {
-  private cursors?: Phaser.Types.Input.Keyboard.CursorKeys
+export class Player {
+  public static readonly SPRITE_FRAME_WIDTH = 32
+  public static readonly SPRITE_FRAME_HEIGHT = 32
 
-  constructor(scene: Phaser.Scene, x: number, y: number) {
-    super(scene, x, y, "tiles", 12)
-
-    scene.add.existing(this)
-    scene.physics.add.existing(this)
-
-    this.cursors = scene.input.keyboard.createCursorKeys()
+  constructor(
+    private sprite: Phaser.GameObjects.Sprite,
+    startTilePosX: number,
+    startTilePosY: number
+  ) {
+    this.sprite.setPosition(
+      startTilePosX * Game.TILE_SIZE + this.playerOffsetX(),
+      startTilePosY * Game.TILE_SIZE + this.playerOffsetY()
+    )
+    this.sprite.setFrame(12)
   }
-  update() {
-    const speed = 100
-    const {
-      body: { velocity },
-      cursors: { up, right, down, left },
-    } = this
 
-    this.setVelocity(0)
+  private playerOffsetX(): number {
+    return Game.TILE_SIZE / 2
+  }
+  private playerOffsetY(): number {
+    return Game.TILE_SIZE / 2
+  }
 
-    if (left?.isDown) this.setVelocityX(-speed)
-    else if (right?.isDown) this.setVelocityX(speed)
+  getPosition(): Phaser.Math.Vector2 {
+    return this.sprite.getCenter()
+  }
 
-    if (up?.isDown) this.setVelocityY(-speed)
-    else if (down?.isDown) this.setVelocityY(speed)
+  setPosition(position: Phaser.Math.Vector2): void {
+    this.sprite.setPosition(position.x, position.y)
+  }
 
-    if (left.isDown) this.play("walk_left", true)
-    else if (right.isDown) this.play("walk_right", true)
-    else if (up.isDown) this.play("walk_up", true)
-    else if (down.isDown) this.play("walk_down", true)
-    else this.anims.stop()
-
-    this.body.velocity.normalize().scale(speed)
+  getTilePos(): Phaser.Math.Vector2 {
+    const x =
+      (this.sprite.getCenter().x - this.playerOffsetX()) / Game.TILE_SIZE
+    const y =
+      (this.sprite.getCenter().y - this.playerOffsetY()) / Game.TILE_SIZE
+    return new Phaser.Math.Vector2(Math.floor(x), Math.floor(y))
   }
 }
