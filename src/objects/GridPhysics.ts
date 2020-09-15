@@ -1,5 +1,5 @@
 import { Game } from "../scenes"
-import { InteractibleObject, Player, Direction, Box } from "./"
+import { Direction, Player } from "./"
 
 const Vector2 = Phaser.Math.Vector2
 type Vector2 = Phaser.Math.Vector2
@@ -19,8 +19,7 @@ export class GridPhysics {
   }
 
   constructor(
-    private scene: Phaser.Scene,
-    private object: InteractibleObject,
+    private object: Player,
     private tileMap: Phaser.Tilemaps.Tilemap
   ) {}
 
@@ -28,10 +27,10 @@ export class GridPhysics {
     if (this.isMoving()) return
     if (this.isBlockingDirection(direction)) {
     } else {
-      const frontBox = this.getFrontBox(direction)
       this.startMoving(direction)
     }
   }
+
   update(delta: number) {
     if (this.isMoving()) {
       this.updatePlayerPosition(delta)
@@ -46,16 +45,6 @@ export class GridPhysics {
 
   private isBlockingDirection(direction: Direction): boolean {
     return this.hasBlockingTile(this.tilePosInDirection(direction))
-  }
-
-  private getFrontBox(direction: Direction): Box {
-    const frontTilePosition = this.tilePosInDirection(direction)
-    return this.scene.boxes.find((box: Box) => {
-      const boxTilePosition = box.getTilePos()
-      return (
-        JSON.stringify(boxTilePosition) === JSON.stringify(frontTilePosition)
-      )
-    })
   }
 
   private hasNoTile(pos: Vector2): boolean {
