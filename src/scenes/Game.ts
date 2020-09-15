@@ -24,6 +24,8 @@ export class Game extends Phaser.Scene {
 
     const boxSprite = this.physics.add.sprite(0, 0, "tiles")
     this.boxes.push(new Box(this, map, boxSprite, 2, 2))
+    const boxSprite2 = this.physics.add.sprite(0, 0, "tiles")
+    this.boxes.push(new Box(this, map, boxSprite2, 2, 3))
 
     const playerSprite = this.physics.add.sprite(0, 0, "tiles")
     this.player = new Player(this, map, playerSprite, 1, 1)

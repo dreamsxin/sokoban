@@ -53,7 +53,7 @@ export class GridPhysics {
     })
   }
 
-  private getFrontBox(direction: Direction): Box {
+  getFrontBox(direction: Direction): Box {
     const frontTilePosition = this.tilePosInDirection(direction)
     // @ts-ignore
     return this.scene.boxes.find((box: Box) => {
@@ -62,11 +62,6 @@ export class GridPhysics {
         JSON.stringify(boxTilePosition) === JSON.stringify(frontTilePosition)
       )
     })
-  }
-
-  private getMovingBox(): Box {
-    // @ts-ignore
-    return this.scene.boxes.find((box: Box) => box.isMoving())
   }
 
   private tilePosInDirection(direction: Direction): Vector2 {

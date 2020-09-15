@@ -32,7 +32,9 @@ export class Box {
   }
 
   isBlocked(direction: Direction): boolean {
-    return this.boxPhysics.isBlockingDirection(direction)
+    const hasCollider = this.boxPhysics.isBlockingDirection(direction)
+    const hasAnotherBox = !!this.boxPhysics.getFrontBox(direction)
+    return hasCollider || hasAnotherBox
   }
 
   private objectOffsetX(): number {
