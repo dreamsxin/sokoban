@@ -28,13 +28,15 @@ export class GridPhysics {
     if (this.isMoving()) return
     if (this.isBlockingDirection(direction)) return
 
+    const belowBox = this.getBelowBox()
     const movingBox = this.getMovingBox()
-    const frontBox = this.getFrontBox(direction)
+    if (movingBox && !belowBox) return
 
+    const frontBox = this.getFrontBox(direction)
     if (frontBox) {
       if (frontBox.isBlocked(direction)) return
       else frontBox.moveObject(direction)
-    } else if (movingBox) return
+    }
 
     this.startMoving(direction)
   }
@@ -43,6 +45,16 @@ export class GridPhysics {
     if (this.isMoving()) {
       this.updatePlayerPosition(delta)
     }
+  }
+
+  private getBelowBox(): Box {
+    // @ts-ignore
+    return this.scene.boxes.find((box: Box) => {
+      return (
+        JSON.stringify(box.getPosition()) ===
+        JSON.stringify(this.object.getPosition())
+      )
+    })
   }
 
   private getFrontBox(direction: Direction): Box {
