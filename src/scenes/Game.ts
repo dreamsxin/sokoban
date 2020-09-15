@@ -7,7 +7,6 @@ export class Game extends Phaser.Scene {
   static readonly CANVAS_HEIGHT = 320
   static readonly TILE_SIZE = 32
 
-  private player?: Player
   private gridControls: GridControls
   private gridPhysics: GridPhysics
 
