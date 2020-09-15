@@ -24,15 +24,14 @@ export class Player {
   update(_time: number, delta: number) {
     this.playerPhysics.update(delta)
 
-    if (this.cursors.left.isDown) {
+    if (Phaser.Input.Keyboard.JustDown(this.cursors.left))
       this.playerPhysics.moveObject(Direction.LEFT)
-    } else if (this.cursors.right.isDown) {
+    if (Phaser.Input.Keyboard.JustDown(this.cursors.right))
       this.playerPhysics.moveObject(Direction.RIGHT)
-    } else if (this.cursors.up.isDown) {
+    if (Phaser.Input.Keyboard.JustDown(this.cursors.up))
       this.playerPhysics.moveObject(Direction.UP)
-    } else if (this.cursors.down.isDown) {
+    if (Phaser.Input.Keyboard.JustDown(this.cursors.down))
       this.playerPhysics.moveObject(Direction.DOWN)
-    }
   }
 
   private objectOffsetX(): number {

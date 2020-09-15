@@ -5,7 +5,7 @@ const Vector2 = Phaser.Math.Vector2
 type Vector2 = Phaser.Math.Vector2
 
 export class GridPhysics {
-  private readonly speedPixelsPerSecond: number = Game.TILE_SIZE * 3
+  private readonly speedPixelsPerSecond: number = Game.TILE_SIZE * 5
   private tileSizePixelsWalked: number = 0
   private decimalPlacesLeft = 0
   private movementDirection = Direction.NONE
