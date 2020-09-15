@@ -9,13 +9,13 @@ export class GridControls {
   update() {
     const cursors = this.input.keyboard.createCursorKeys()
     if (cursors.left.isDown) {
-      this.gridPhysics.movePlayer(Direction.LEFT)
+      this.gridPhysics.moveObject(Direction.LEFT)
     } else if (cursors.right.isDown) {
-      this.gridPhysics.movePlayer(Direction.RIGHT)
+      this.gridPhysics.moveObject(Direction.RIGHT)
     } else if (cursors.up.isDown) {
-      this.gridPhysics.movePlayer(Direction.UP)
+      this.gridPhysics.moveObject(Direction.UP)
     } else if (cursors.down.isDown) {
-      this.gridPhysics.movePlayer(Direction.DOWN)
+      this.gridPhysics.moveObject(Direction.DOWN)
     }
   }
 }

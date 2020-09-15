@@ -1,5 +1,5 @@
 import Phaser from "phaser"
-import { Player, GridControls, GridPhysics } from "../objects"
+import { Player, GridControls, GridPhysics, Box } from "../objects"
 import { level1 } from "../assets/tilemaps"
 
 export class Game extends Phaser.Scene {
@@ -9,6 +9,7 @@ export class Game extends Phaser.Scene {
 
   private gridControls: GridControls
   private gridPhysics: GridPhysics
+  private boxes: Box[] = []
 
   constructor() {
     super("game")
@@ -22,9 +23,18 @@ export class Game extends Phaser.Scene {
     map.createStaticLayer("Below Player", tileset, 0, 0)
     map.createStaticLayer("World", tileset, 0, 0)
 
+    // todo: create sprite from tileset number
     const playerSprite = this.physics.add.sprite(0, 0, "tiles")
+    const boxSprite = this.physics.add.sprite(0, 0, "tiles")
 
-    this.gridPhysics = new GridPhysics(new Player(playerSprite, 1, 1), map)
+    const box = new Box(boxSprite, 2, 2)
+    this.boxes.push(box)
+    this.gridPhysics = new GridPhysics(this, box, map)
+    this.gridPhysics = new GridPhysics(
+      this,
+      new Player(playerSprite, 1, 1),
+      map
+    )
     this.gridControls = new GridControls(this.input, this.gridPhysics)
   }
   update(_time: number, delta: number) {

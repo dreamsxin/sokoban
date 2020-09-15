@@ -1,5 +1,5 @@
 import { Game } from "../scenes"
-import { Player, Direction } from "./"
+import { InteractibleObject, Player, Direction, Box } from "./"
 
 const Vector2 = Phaser.Math.Vector2
 type Vector2 = Phaser.Math.Vector2
@@ -19,15 +19,16 @@ export class GridPhysics {
   }
 
   constructor(
-    private player: Player,
+    private scene: Phaser.Scene,
+    private object: InteractibleObject,
     private tileMap: Phaser.Tilemaps.Tilemap
   ) {}
 
-  movePlayer(direction: Direction): void {
+  moveObject(direction: Direction): void {
     if (this.isMoving()) return
     if (this.isBlockingDirection(direction)) {
-      //   this.player.setStandingFrame(direction);
     } else {
+      const frontBox = this.getFrontBox(direction)
       this.startMoving(direction)
     }
   }
@@ -38,13 +39,23 @@ export class GridPhysics {
   }
 
   private tilePosInDirection(direction: Direction): Vector2 {
-    return this.player
+    return this.object
       .getTilePos()
       .add(this.movementDirectionVectors[direction])
   }
 
   private isBlockingDirection(direction: Direction): boolean {
     return this.hasBlockingTile(this.tilePosInDirection(direction))
+  }
+
+  private getFrontBox(direction: Direction): Box {
+    const frontTilePosition = this.tilePosInDirection(direction)
+    return this.scene.boxes.find((box: Box) => {
+      const boxTilePosition = box.getTilePos()
+      return (
+        JSON.stringify(boxTilePosition) === JSON.stringify(frontTilePosition)
+      )
+    })
   }
 
   private hasNoTile(pos: Vector2): boolean {
@@ -80,11 +91,11 @@ export class GridPhysics {
     return this.tileSizePixelsWalked + pixelsToWalkThisUpdate >= Game.TILE_SIZE
   }
 
-  private movePlayerSprite(speed: number): void {
-    const newPlayerPos = this.player
+  private moveObjectSprite(speed: number): void {
+    const newObjectPos = this.object
       .getPosition()
       .add(this.movementDistance(speed))
-    this.player.setPosition(newPlayerPos)
+    this.object.setPosition(newObjectPos)
     this.tileSizePixelsWalked += speed
     this.tileSizePixelsWalked %= Game.TILE_SIZE
   }
@@ -95,8 +106,8 @@ export class GridPhysics {
       .multiply(new Vector2(speed))
   }
 
-  private movePlayerSpriteRestOfTile() {
-    this.movePlayerSprite(Game.TILE_SIZE - this.tileSizePixelsWalked)
+  private moveObjectSpriteRestOfTile() {
+    this.moveObjectSprite(Game.TILE_SIZE - this.tileSizePixelsWalked)
     this.stopMoving()
   }
 
@@ -113,9 +124,9 @@ export class GridPhysics {
     )
 
     if (this.willCrossTileBorderThisUpdate(pixelsToWalkThisUpdate)) {
-      this.movePlayerSpriteRestOfTile()
+      this.moveObjectSpriteRestOfTile()
     } else {
-      this.movePlayerSprite(pixelsToWalkThisUpdate)
+      this.moveObjectSprite(pixelsToWalkThisUpdate)
     }
   }
 
