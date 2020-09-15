@@ -26,14 +26,15 @@ export class GridPhysics {
 
   moveObject(direction: Direction): void {
     if (this.isMoving()) return
-    if (this.isBlockingDirection(direction)) {
-    } else {
-      if (this.object instanceof Player) {
-        const frontBox = this.getFrontBox(direction)
-        if (frontBox) frontBox.moveObject(direction)
-      }
-      this.startMoving(direction)
+    if (this.isBlockingDirection(direction)) return
+
+    const frontBox = this.getFrontBox(direction)
+    if (frontBox) {
+      if (frontBox.isBlocked(direction)) return
+      else frontBox.moveObject(direction)
     }
+
+    this.startMoving(direction)
   }
 
   update(delta: number) {
@@ -59,7 +60,7 @@ export class GridPhysics {
       .add(this.movementDirectionVectors[direction])
   }
 
-  private isBlockingDirection(direction: Direction): boolean {
+  isBlockingDirection(direction: Direction): boolean {
     return this.hasBlockingTile(this.tilePosInDirection(direction))
   }
 

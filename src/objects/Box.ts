@@ -27,6 +27,10 @@ export class Box {
     this.boxPhysics.moveObject(direction)
   }
 
+  isBlocked(direction: Direction): boolean {
+    return this.boxPhysics.isBlockingDirection(direction)
+  }
+
   private objectOffsetX(): number {
     return Game.TILE_SIZE / 2
   }
