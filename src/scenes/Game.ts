@@ -1,6 +1,6 @@
 import Phaser from "phaser"
 import { level1 } from "../assets/tilemaps"
-import { Orientation, Player } from "../objects"
+import { Box, Orientation, Player } from "../objects"
 
 export class Game extends Phaser.Scene {
   private player: Player
@@ -22,6 +22,7 @@ export class Game extends Phaser.Scene {
 
     const orientation = new Orientation(this)
     this.player = new Player(this, 1, 1, orientation)
+    this.box = new Box(this, 2, 1, orientation)
   }
 
   update(_time: number, delta: number) {
