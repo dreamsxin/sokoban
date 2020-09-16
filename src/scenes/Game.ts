@@ -1,6 +1,6 @@
 import Phaser from "phaser"
 import { level1 } from "../assets/tilemaps"
-import { Player } from "../objects"
+import { Orientation, Player } from "../objects"
 
 export class Game extends Phaser.Scene {
   private player: Player
@@ -20,7 +20,8 @@ export class Game extends Phaser.Scene {
     this.map.createStaticLayer("Below Player", tileset, 0, 0)
     this.map.createStaticLayer("World", tileset, 0, 0)
 
-    this.player = new Player(this, 1, 1)
+    const orientation = new Orientation(this)
+    this.player = new Player(this, 1, 1, orientation)
   }
 
   update(_time: number, delta: number) {
