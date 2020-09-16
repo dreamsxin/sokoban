@@ -1,6 +1,5 @@
 import Phaser from "phaser"
 import { tiles } from "../assets/images"
-import registerAnimations from "../animations"
 
 export class Boot extends Phaser.Scene {
   constructor() {
@@ -13,7 +12,6 @@ export class Boot extends Phaser.Scene {
     })
   }
   create() {
-    registerAnimations(this.anims)
     this.scene.start("game")
   }
 }
