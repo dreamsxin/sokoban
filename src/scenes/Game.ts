@@ -1,18 +1,29 @@
 import Phaser from "phaser"
 import { level1 } from "../assets/tilemaps"
+import { Player } from "../objects"
 
 export class Game extends Phaser.Scene {
+  private player: Player
+  private map: Phaser.Tilemaps.Tilemap
+
   constructor() {
     super("game")
   }
+
   preload() {
     this.load.tilemapTiledJSON("map", level1)
   }
+
   create() {
-    const map = this.make.tilemap({ key: "map" })
-    const tileset = map.addTilesetImage("sokoban_tileset", "tiles")
-    map.createStaticLayer("Below Player", tileset, 0, 0)
-    map.createStaticLayer("World", tileset, 0, 0)
+    this.map = this.make.tilemap({ key: "map" })
+    const tileset = this.map.addTilesetImage("sokoban_tileset", "tiles")
+    this.map.createStaticLayer("Below Player", tileset, 0, 0)
+    this.map.createStaticLayer("World", tileset, 0, 0)
+
+    this.player = new Player(this, 1, 1)
   }
-  update(_time: number, delta: number) {}
+
+  update(_time: number, delta: number) {
+    this.player.update()
+  }
 }

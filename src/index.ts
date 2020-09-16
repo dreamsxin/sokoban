@@ -17,5 +17,7 @@ const config = {
 }
 
 window.onload = () => {
-  const Game = new Phaser.Game(config)
+  const game = new Phaser.Game(config)
+  //@ts-ignore
+  game.config.tileSize = 32
 }
