@@ -13,7 +13,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     //@ts-ignore
     const { tileSize } = scene.game.config
     const startX = x * tileSize + tileSize / 2
-    const startY = x * tileSize + tileSize / 2
+    const startY = y * tileSize + tileSize / 2
     super(scene, startX, startY, "tiles", 12)
 
     this.cursors = this.scene.input.keyboard.createCursorKeys()
@@ -36,6 +36,12 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
   private move(direction: Direction) {
     if (this.orientation.isBlockingDirection(this, direction)) return
+
+    const box = this.orientation.getBoxInDirection(this, direction)
+    if (box) {
+      if (this.orientation.isBlockingDirection(box, direction)) return
+      box.move(direction)
+    }
 
     const newPosition = this.orientation.getNextPosition(this, direction)
     this.setPosition(newPosition.x, newPosition.y)

@@ -1,4 +1,4 @@
-import { Direction } from "./"
+import { Direction, Box } from "./"
 
 const Vector2 = Phaser.Math.Vector2
 type Vector2 = Phaser.Math.Vector2
@@ -46,6 +46,14 @@ export class Orientation {
     })
   }
 
+  private getBoxAtPosition(pos: Vector2): Box {
+    //@ts-ignore
+    return this.scene.boxes.find((box: Box) => {
+      const boxTilePosition = this.getTilePos(box)
+      return JSON.stringify(boxTilePosition) === JSON.stringify(pos)
+    })
+  }
+
   private getTilePos(
     sprite: Phaser.Physics.Arcade.Sprite
   ): Phaser.Math.Vector2 {
@@ -61,6 +69,13 @@ export class Orientation {
     direction: Direction
   ): boolean {
     return this.hasBlockingTile(this.tilePosInDirection(sprite, direction))
+  }
+
+  getBoxInDirection(
+    sprite: Phaser.Physics.Arcade.Sprite,
+    direction: Direction
+  ): Box {
+    return this.getBoxAtPosition(this.tilePosInDirection(sprite, direction))
   }
 
   getNextPosition(sprite: Phaser.Physics.Arcade.Sprite, direction: Direction) {

@@ -3,8 +3,9 @@ import { level1 } from "../assets/tilemaps"
 import { Box, Orientation, Player } from "../objects"
 
 export class Game extends Phaser.Scene {
-  private player: Player
   private map: Phaser.Tilemaps.Tilemap
+  private player: Player
+  private boxes: Box[] = []
 
   constructor() {
     super("game")
@@ -22,7 +23,7 @@ export class Game extends Phaser.Scene {
 
     const orientation = new Orientation(this)
     this.player = new Player(this, 1, 1, orientation)
-    this.box = new Box(this, 2, 1, orientation)
+    this.boxes.push(new Box(this, 2, 2, orientation))
   }
 
   update(_time: number, delta: number) {
