@@ -1,4 +1,5 @@
 import Phaser from "phaser"
+import { tiles } from "../assets/images"
 import { level1 } from "../assets/tilemaps"
 import { Box, Orientation, Player } from "../objects"
 
@@ -19,14 +20,36 @@ export class Game extends Phaser.Scene {
     this.map = this.make.tilemap({ key: "map" })
     const tileset = this.map.addTilesetImage("sokoban_tileset", "tiles")
     this.map.createStaticLayer("Below Player", tileset, 0, 0)
-    this.map.createStaticLayer("World", tileset, 0, 0)
+    const world = this.map.createDynamicLayer("World", tileset, 0, 0)
 
     const orientation = new Orientation(this)
-    this.player = new Player(this, 1, 1, orientation)
-    this.boxes.push(new Box(this, 2, 2, orientation))
+
+    const playerTile = this.findPlayerTile(world)
+    this.player = new Player(this, playerTile.x, playerTile.y, orientation)
+
+    const boxTiles = this.findBoxTiles(world)
+    boxTiles.forEach((tile) => {
+      this.boxes.push(new Box(this, tile.x, tile.y, orientation))
+    })
+
+    this.map.replaceByIndex(8, 2) // replace player tile with ground
+    this.map.replaceByIndex(4, 2) // replace box tiles with ground
   }
 
   update(_time: number, delta: number) {
     this.player.update()
+  }
+
+  private findPlayerTile(world: Phaser.Tilemaps.DynamicTilemapLayer) {
+    const tile = world.findTile((tile) => tile.properties.isPlayer)
+    return { x: tile.x, y: tile.y }
+  }
+
+  private findBoxTiles(world: Phaser.Tilemaps.DynamicTilemapLayer) {
+    const positions: { x: number; y: number }[] = []
+    world.forEachTile((tile) => {
+      if (tile.properties.isBox) positions.push({ x: tile.x, y: tile.y })
+    })
+    return positions
   }
 }
