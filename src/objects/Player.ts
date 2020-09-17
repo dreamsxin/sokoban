@@ -24,14 +24,19 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
   }
 
   update() {
-    if (Phaser.Input.Keyboard.JustDown(this.cursors.left))
+    if (Phaser.Input.Keyboard.JustDown(this.cursors.left)) {
+      this.setFrame(8)
       this.move(Direction.LEFT)
-    else if (Phaser.Input.Keyboard.JustDown(this.cursors.right))
+    } else if (Phaser.Input.Keyboard.JustDown(this.cursors.right)) {
+      this.setFrame(6)
       this.move(Direction.RIGHT)
-    else if (Phaser.Input.Keyboard.JustDown(this.cursors.up))
+    } else if (Phaser.Input.Keyboard.JustDown(this.cursors.up)) {
+      this.setFrame(5)
       this.move(Direction.UP)
-    else if (Phaser.Input.Keyboard.JustDown(this.cursors.down))
+    } else if (Phaser.Input.Keyboard.JustDown(this.cursors.down)) {
+      this.setFrame(7)
       this.move(Direction.DOWN)
+    }
   }
 
   private move(direction: Direction) {
