@@ -102,4 +102,9 @@ export class Orientation {
           .multiply(new Vector2(tileSize))
       )
   }
+
+  areAllBoxesInPlace() {
+    //@ts-ignore
+    return this.scene.boxes.every((box) => box.isPlaced)
+  }
 }

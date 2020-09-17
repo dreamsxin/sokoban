@@ -12,6 +12,6 @@ export class Boot extends Phaser.Scene {
     })
   }
   create() {
-    this.scene.start("game")
+    this.scene.start("game", { level: 1 })
   }
 }

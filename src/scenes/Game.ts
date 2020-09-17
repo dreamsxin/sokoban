@@ -1,9 +1,8 @@
 import Phaser from "phaser"
-import { tiles } from "../assets/images"
-import { level1 } from "../assets/tilemaps"
 import { Box, Orientation, Player } from "../objects"
 
 export class Game extends Phaser.Scene {
+  private level: number = 1
   private map: Phaser.Tilemaps.Tilemap
   private player: Player
   private boxes: Box[] = []
@@ -12,12 +11,17 @@ export class Game extends Phaser.Scene {
     super("game")
   }
 
+  init(data: { level: number }) {
+    this.level = data.level
+  }
+
   preload() {
-    this.load.tilemapTiledJSON("map", level1)
+    const level = require(`../assets/tilemaps/level${this.level}.json`)
+    this.load.tilemapTiledJSON(`map${this.level}`, level)
   }
 
   create() {
-    this.map = this.make.tilemap({ key: "map" })
+    this.map = this.make.tilemap({ key: `map${this.level}` })
     const tileset = this.map.addTilesetImage("sokoban_tileset", "tiles")
     this.map.createStaticLayer("Below Player", tileset, 0, 0)
     const world = this.map.createDynamicLayer("World", tileset, 0, 0)
@@ -51,5 +55,9 @@ export class Game extends Phaser.Scene {
       if (tile.properties.isBox) positions.push({ x: tile.x, y: tile.y })
     })
     return positions
+  }
+
+  nextLevel() {
+    this.scene.restart({ level: this.level + 1 })
   }
 }

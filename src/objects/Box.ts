@@ -2,6 +2,7 @@ import { Direction, Orientation } from "../objects"
 
 export class Box extends Phaser.Physics.Arcade.Sprite {
   private orientation: Orientation
+  private isPlaced: boolean
 
   constructor(
     scene: Phaser.Scene,
@@ -30,7 +31,14 @@ export class Box extends Phaser.Physics.Arcade.Sprite {
     const newPosition = this.orientation.getNextPosition(this, direction)
     this.setPosition(newPosition.x, newPosition.y)
 
-    if (this.orientation.isMarkedPosition(this)) this.setFrame(9)
-    else this.setFrame(8)
+    if (this.orientation.isMarkedPosition(this)) {
+      this.setFrame(9)
+      this.isPlaced = true
+      //@ts-ignore
+      if (this.orientation.areAllBoxesInPlace()) this.scene.nextLevel()
+    } else {
+      this.setFrame(8)
+      this.isPlaced = false
+    }
   }
 }
