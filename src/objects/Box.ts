@@ -24,6 +24,9 @@ export class Box extends Phaser.Physics.Arcade.Sprite {
   move(direction: Direction) {
     if (this.orientation.isBlockingDirection(this, direction)) return
 
+    const box = this.orientation.getBoxInDirection(this, direction)
+    if (box) return
+
     const newPosition = this.orientation.getNextPosition(this, direction)
     this.setPosition(newPosition.x, newPosition.y)
 

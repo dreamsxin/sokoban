@@ -44,7 +44,9 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
     const box = this.orientation.getBoxInDirection(this, direction)
     if (box) {
-      if (this.orientation.isBlockingDirection(box, direction)) return
+      const otherBox = this.orientation.getBoxInDirection(box, direction)
+      const isBoxBlocked = this.orientation.isBlockingDirection(box, direction)
+      if (isBoxBlocked || otherBox) return
       box.move(direction)
     }
 
