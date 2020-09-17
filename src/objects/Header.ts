@@ -22,7 +22,7 @@ export class Header extends Phaser.GameObjects.Graphics {
   }
 
   setLevel(amount: number) {
-    this.levelLabel.text = `LIVES ${amount}`
+    this.levelLabel.text = `LEVEL ${amount}`
   }
 
   setMoves(amount: number) {
