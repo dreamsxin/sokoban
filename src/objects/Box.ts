@@ -26,5 +26,9 @@ export class Box extends Phaser.Physics.Arcade.Sprite {
 
     const newPosition = this.orientation.getNextPosition(this, direction)
     this.setPosition(newPosition.x, newPosition.y)
+
+    if (this.orientation.isMarkedPosition(this)) {
+      this.setFrame(4)
+    }
   }
 }

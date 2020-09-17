@@ -46,6 +46,15 @@ export class Orientation {
     })
   }
 
+  private hasMarkedTile(pos: Vector2): boolean {
+    //@ts-ignore
+    const { map } = this.scene
+    return map.layers.some((layer: Phaser.Tilemaps.StaticTilemapLayer) => {
+      const tile = map.getTileAt(pos.x, pos.y, false, layer.name)
+      return tile && tile.properties.marked
+    })
+  }
+
   private getBoxAtPosition(pos: Vector2): Box {
     //@ts-ignore
     return this.scene.boxes.find((box: Box) => {
@@ -62,6 +71,10 @@ export class Orientation {
     const x = sprite.getCenter().x / tileSize
     const y = sprite.getCenter().y / tileSize
     return new Phaser.Math.Vector2(Math.floor(x), Math.floor(y))
+  }
+
+  isMarkedPosition(sprite: Phaser.Physics.Arcade.Sprite): boolean {
+    return this.hasMarkedTile(this.getTilePos(sprite))
   }
 
   isBlockingDirection(

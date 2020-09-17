@@ -14,7 +14,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     const { tileSize } = scene.game.config
     const startX = x * tileSize + tileSize / 2
     const startY = y * tileSize + tileSize / 2
-    super(scene, startX, startY, "tiles", 12)
+    super(scene, startX, startY, "tiles", 7)
 
     this.cursors = this.scene.input.keyboard.createCursorKeys()
     this.orientation = orientation
