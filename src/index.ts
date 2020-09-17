@@ -1,11 +1,11 @@
 import Phaser from "phaser"
-import { Boot, Game } from "./scenes"
+import { Boot, Menu, Game } from "./scenes"
 
 const config = {
   width: 640,
   height: 480,
   backgroundColor: "0 x 000000",
-  scene: [Boot, Game],
+  scene: [Boot, Menu, Game],
   pixelArt: true,
   zoom: 1.5,
   physics: {
