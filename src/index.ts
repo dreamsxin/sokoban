@@ -2,12 +2,12 @@ import Phaser from "phaser"
 import { Boot, Game } from "./scenes"
 
 const config = {
-  width: 320,
-  height: 320,
+  width: 640,
+  height: 480,
   backgroundColor: "0 x 000000",
   scene: [Boot, Game],
   pixelArt: true,
-  zoom: 3,
+  zoom: 1.5,
   physics: {
     default: "arcade",
     arcade: {

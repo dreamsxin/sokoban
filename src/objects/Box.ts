@@ -13,7 +13,7 @@ export class Box extends Phaser.Physics.Arcade.Sprite {
     const { tileSize } = scene.game.config
     const startX = x * tileSize + tileSize / 2
     const startY = y * tileSize + tileSize / 2
-    super(scene, startX, startY, "tiles", 3)
+    super(scene, startX, startY, "tiles", 8)
 
     this.orientation = orientation
 
@@ -27,7 +27,7 @@ export class Box extends Phaser.Physics.Arcade.Sprite {
     const newPosition = this.orientation.getNextPosition(this, direction)
     this.setPosition(newPosition.x, newPosition.y)
 
-    if (this.orientation.isMarkedPosition(this)) this.setFrame(4)
-    else this.setFrame(3)
+    if (this.orientation.isMarkedPosition(this)) this.setFrame(9)
+    else this.setFrame(8)
   }
 }

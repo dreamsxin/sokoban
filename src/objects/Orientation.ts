@@ -51,7 +51,7 @@ export class Orientation {
     const { map } = this.scene
     return map.layers.some((layer: Phaser.Tilemaps.StaticTilemapLayer) => {
       const tile = map.getTileAt(pos.x, pos.y, false, layer.name)
-      return tile && tile.properties.marked
+      return tile && tile.properties.isMark
     })
   }
 

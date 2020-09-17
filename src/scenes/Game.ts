@@ -32,8 +32,8 @@ export class Game extends Phaser.Scene {
       this.boxes.push(new Box(this, tile.x, tile.y, orientation))
     })
 
-    this.map.replaceByIndex(8, 2) // replace player tile with ground
-    this.map.replaceByIndex(4, 2) // replace box tiles with ground
+    this.map.replaceByIndex(7, 3) // replace player tile with ground
+    this.map.replaceByIndex(9, 3) // replace box tiles with ground
   }
 
   update(_time: number, delta: number) {
