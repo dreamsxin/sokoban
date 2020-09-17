@@ -1,8 +1,9 @@
 import Phaser from "phaser"
-import { Box, Orientation, Player } from "../objects"
+import { Box, Orientation, Player, Header } from "../objects"
 
 export class Game extends Phaser.Scene {
   private level: number = 1
+  private header: Header
   private map: Phaser.Tilemaps.Tilemap
   private player: Player
   private boxes: Box[] = []
@@ -21,6 +22,9 @@ export class Game extends Phaser.Scene {
   }
 
   create() {
+    this.header = new Header(this)
+    this.header.setLevel(this.level)
+
     this.map = this.make.tilemap({ key: `map${this.level}` })
     const tileset = this.map.addTilesetImage("sokoban_tileset", "tiles")
     this.map.createStaticLayer("Below Player", tileset, 0, 0)

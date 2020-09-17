@@ -3,6 +3,7 @@ import { Direction, Orientation } from "../objects"
 export class Player extends Phaser.Physics.Arcade.Sprite {
   private cursors: Phaser.Types.Input.Keyboard.CursorKeys
   private orientation: Orientation
+  private moves: number
 
   constructor(
     scene: Phaser.Scene,
@@ -18,6 +19,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
     this.cursors = this.scene.input.keyboard.createCursorKeys()
     this.orientation = orientation
+    this.moves = 0
 
     scene.add.existing(this)
     scene.physics.add.existing(this)
@@ -52,5 +54,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
     const newPosition = this.orientation.getNextPosition(this, direction)
     this.setPosition(newPosition.x, newPosition.y)
+    //@ts-ignore
+    this.scene.header.setMoves(++this.moves)
   }
 }

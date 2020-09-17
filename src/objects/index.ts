@@ -1,4 +1,5 @@
 export * from "./Box"
 export * from "./Player"
+export * from "./Header"
 export * from "./Direction"
 export * from "./Orientation"
