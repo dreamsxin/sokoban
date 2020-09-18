@@ -8,7 +8,8 @@ export class Box extends Phaser.Physics.Arcade.Sprite {
     scene: Phaser.Scene,
     x: number,
     y: number,
-    orientation: Orientation
+    orientation: Orientation,
+    isPlaced?: boolean
   ) {
     //@ts-ignore
     const { tileSize } = scene.game.config
@@ -17,6 +18,7 @@ export class Box extends Phaser.Physics.Arcade.Sprite {
     super(scene, startX, startY, "tiles", 8)
 
     this.orientation = orientation
+    this.isPlaced = !!isPlaced
 
     scene.add.existing(this)
     scene.physics.add.existing(this)

@@ -15,6 +15,7 @@ export class Game extends Phaser.Scene {
 
   init(data: { level: number }) {
     this.level = data.level
+    this.boxes = []
     localStorage.setItem("score", `${this.level}`)
   }
 
@@ -42,7 +43,7 @@ export class Game extends Phaser.Scene {
 
     const boxTiles = this.findBoxTiles(world)
     boxTiles.forEach((tile) => {
-      this.boxes.push(new Box(this, tile.x, tile.y, orientation))
+      this.boxes.push(new Box(this, tile.x, tile.y, orientation, tile.isPlaced))
     })
 
     this.map.replaceByIndex(7, 3) // replace player tile with ground
@@ -63,15 +64,17 @@ export class Game extends Phaser.Scene {
   }
 
   private findBoxTiles(world: Phaser.Tilemaps.DynamicTilemapLayer) {
-    const positions: { x: number; y: number }[] = []
+    const positions: { x: number; y: number; isPlaced: boolean }[] = []
     world.forEachTile((tile) => {
-      if (tile.properties.isBox) positions.push({ x: tile.x, y: tile.y })
+      if (tile.properties.isBox) {
+        const isPlaced = !!tile.properties.isPlaced
+        positions.push({ x: tile.x, y: tile.y, isPlaced })
+      }
     })
     return positions
   }
 
   restartLevel() {
-    this.boxes = []
     this.scene.restart()
   }
 

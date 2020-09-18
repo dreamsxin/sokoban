@@ -1,935 +1,390 @@
-{
-  "compressionlevel": -1,
-  "height": 15,
-  "infinite": false,
-  "layers": [
+{ "compressionlevel":-1,
+ "editorsettings":
     {
-      "data": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        3,
-        3,
-        3,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        3,
-        3,
-        3,
-        1,
-        3,
-        3,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        3,
-        3,
-        3,
-        3,
-        4,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        3,
-        1,
-        1,
-        1,
-        4,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        3,
-        3,
-        3,
-        1,
-        1,
-        1,
-        4,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        3,
-        3,
-        3,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        3,
-        3,
-        3,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
-      ],
-      "height": 15,
-      "id": 1,
-      "name": "Below Player",
-      "opacity": 1,
-      "type": "tilelayer",
-      "visible": true,
-      "width": 20,
-      "x": 0,
-      "y": 0
-    },
-    {
-      "data": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        2,
-        2,
-        2,
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        0,
-        0,
-        0,
-        2,
-        2,
-        2,
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        0,
-        0,
-        0,
-        2,
-        0,
-        0,
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        2,
-        2,
-        0,
-        2,
-        2,
-        2,
-        0,
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        0,
-        9,
-        0,
-        2,
-        0,
-        2,
-        0,
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        0,
-        9,
-        9,
-        2,
-        0,
-        2,
-        2,
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        7,
-        0,
-        0,
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        2,
-        2,
-        2,
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "height": 15,
-      "id": 2,
-      "name": "World",
-      "opacity": 1,
-      "type": "tilelayer",
-      "visible": true,
-      "width": 20,
-      "x": 0,
-      "y": 0
-    }
-  ],
-  "nextlayerid": 3,
-  "nextobjectid": 1,
-  "orientation": "orthogonal",
-  "renderorder": "right-down",
-  "tiledversion": "1.4.2",
-  "tileheight": 32,
-  "tilesets": [
-    {
-      "columns": 4,
-      "firstgid": 1,
-      "image": "../images/tiles.png",
-      "imageheight": 96,
-      "imagewidth": 128,
-      "margin": 0,
-      "name": "sokoban_tileset",
-      "spacing": 0,
-      "tilecount": 12,
-      "tileheight": 32,
-      "tiles": [
+     "export":
         {
-          "id": 0,
-          "properties": [
-            {
-              "name": "collides",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isBox",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isMark",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isPlayer",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "properties": [
-            {
-              "name": "collides",
-              "type": "bool",
-              "value": true
-            },
-            {
-              "name": "isBox",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isMark",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isPlayer",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "properties": [
-            {
-              "name": "collides",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isBox",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isMark",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isPlayer",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "properties": [
-            {
-              "name": "collides",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isBox",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isMark",
-              "type": "bool",
-              "value": true
-            },
-            {
-              "name": "isPlayer",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 4,
-          "properties": [
-            {
-              "name": "collides",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isBox",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isMark",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isPlayer",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 5,
-          "properties": [
-            {
-              "name": "collides",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isBox",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isMark",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isPlayer",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 6,
-          "properties": [
-            {
-              "name": "collides",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isBox",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isMark",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isPlayer",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 7,
-          "properties": [
-            {
-              "name": "collides",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isBox",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isMark",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isPlayer",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 8,
-          "properties": [
-            {
-              "name": "collides",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isBox",
-              "type": "bool",
-              "value": true
-            },
-            {
-              "name": "isMark",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isPlayer",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 9,
-          "properties": [
-            {
-              "name": "collides",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isBox",
-              "type": "bool",
-              "value": true
-            },
-            {
-              "name": "isMark",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isPlayer",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 10,
-          "properties": [
-            {
-              "name": "collides",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isBox",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isMark",
-              "type": "bool",
-              "value": false
-            },
-            {
-              "name": "isPlayer",
-              "type": "bool",
-              "value": true
-            }
-          ]
+         "format":"json",
+         "target":"level1.json"
         }
-      ],
-      "tilewidth": 32
-    }
-  ],
-  "tilewidth": 32,
-  "type": "map",
-  "version": 1.4,
-  "width": 20
+    },
+ "height":15,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+         "height":15,
+         "id":1,
+         "name":"Below Player",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":20,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 2, 2, 2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 9, 0, 2, 0, 2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 9, 9, 2, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 7, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":15,
+         "id":2,
+         "name":"World",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":20,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":3,
+ "nextobjectid":1,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tiledversion":"1.4.2",
+ "tileheight":32,
+ "tilesets":[
+        {
+         "columns":4,
+         "firstgid":1,
+         "image":"..\/images\/tiles.png",
+         "imageheight":96,
+         "imagewidth":128,
+         "margin":0,
+         "name":"sokoban_tileset",
+         "spacing":0,
+         "tilecount":12,
+         "tileheight":32,
+         "tiles":[
+                {
+                 "id":0,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isBox",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isMark",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlaced",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlayer",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":1,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"isBox",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isMark",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlaced",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlayer",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":2,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isBox",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isMark",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlaced",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlayer",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":3,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isBox",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isMark",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"isPlaced",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlayer",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":4,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isBox",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isMark",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlaced",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlayer",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":5,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isBox",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isMark",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlaced",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlayer",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":6,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isBox",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isMark",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlaced",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlayer",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":7,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isBox",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isMark",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlaced",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlayer",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":8,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isBox",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"isMark",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlaced",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlayer",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":9,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isBox",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"isMark",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlaced",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"isPlayer",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":10,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isBox",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isMark",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlaced",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"isPlayer",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":11,
+                 "properties":[
+                        {
+                         "name":"isPlaced",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }],
+         "tilewidth":32
+        }],
+ "tilewidth":32,
+ "type":"map",
+ "version":1.4,
+ "width":20
 }
