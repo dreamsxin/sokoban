@@ -7,6 +7,7 @@ export class Game extends Phaser.Scene {
   private map: Phaser.Tilemaps.Tilemap
   private player: Player
   private boxes: Box[] = []
+  private restartKey: Phaser.Input.Keyboard.Key
 
   constructor() {
     super("game")
@@ -25,6 +26,9 @@ export class Game extends Phaser.Scene {
   create() {
     this.header = new Header(this)
     this.header.setLevel(this.level)
+    this.restartKey = this.input.keyboard.addKey(
+      Phaser.Input.Keyboard.KeyCodes.R
+    )
 
     this.map = this.make.tilemap({ key: `map${this.level}` })
     const tileset = this.map.addTilesetImage("sokoban_tileset", "tiles")
@@ -46,6 +50,9 @@ export class Game extends Phaser.Scene {
   }
 
   update(_time: number, delta: number) {
+    if (Phaser.Input.Keyboard.JustDown(this.restartKey)) {
+      this.restartLevel()
+    }
     this.player.update()
   }
 
@@ -60,6 +67,11 @@ export class Game extends Phaser.Scene {
       if (tile.properties.isBox) positions.push({ x: tile.x, y: tile.y })
     })
     return positions
+  }
+
+  restartLevel() {
+    this.boxes = []
+    this.scene.restart()
   }
 
   nextLevel() {
