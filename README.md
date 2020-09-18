@@ -1,4 +1,4 @@
-# Sokoban - Work in progress
+# Sokoban
 
 _Puzzle game developed using Phaser 3 with Typescript_
 
