@@ -32,7 +32,8 @@ export class Menu extends Phaser.Scene {
 
   update() {
     if (Phaser.Input.Keyboard.JustDown(this.spacebar)) {
-      this.scene.start("game", { level: 1 })
+      const level = parseInt(localStorage.getItem("score")) || 1
+      this.scene.start("game", { level })
     }
   }
 }

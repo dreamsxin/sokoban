@@ -14,6 +14,7 @@ export class Game extends Phaser.Scene {
 
   init(data: { level: number }) {
     this.level = data.level
+    localStorage.setItem("score", `${this.level}`)
   }
 
   preload() {
