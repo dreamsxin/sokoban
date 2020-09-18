@@ -79,6 +79,7 @@ export class Game extends Phaser.Scene {
   }
 
   nextLevel() {
-    this.scene.restart({ level: this.level + 1 })
+    if (this.level == 10) this.scene.start("menu")
+    else this.scene.restart({ level: this.level + 1 })
   }
 }
