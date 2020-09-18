@@ -18,7 +18,7 @@ export class Menu extends Phaser.Scene {
         USE THE ARROW KEYS TO MOVE ALL\n
         BOXES IN THE MARKED TILES\n
         \n
-        PRESS 'R' ANYTIME TO RESET LEVEL\n
+        PRESS 'R' ANYTIME TO RESET THE LEVEL\n
         \n
         PRESS SPACE TO START`,
       32,
